@@ -4,12 +4,13 @@ import {connect} from 'react-redux';
 import './App.css';
 import {selectCurrentUser} from '../src/redux/user/user.selectors';
 import {createStructuredSelector} from 'reselect';
-import Homepage from './pages/homepage/homepage.component';
+import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import {auth, createUserProfileDocument} from './firebase/firebase.utils';
 import SigninAndSignUp from './pages/sign-in-and-sign-up/sign-in-and-sign-up.component';
 import {setCurrentUser} from './redux/user/user.actions';
+import CheckoutPage from './pages/checkout/checkout.component';
 
 class App extends React.Component{
   unsubscribeFromAuth = null
@@ -41,8 +42,9 @@ class App extends React.Component{
       <div>
         <Header/>
         <Switch>
-          <Route exact path='/' component = {Homepage}/>
+          <Route exact path='/' component = {HomePage}/>
           <Route path='/shop' component = {ShopPage}/>
+          <Route exact path='/checkout' component = {CheckoutPage}/>
           <Route exact path='/signin' render={()=> 
             this.props.currentUser ? 
             (<Redirect to= '/' />) : 
