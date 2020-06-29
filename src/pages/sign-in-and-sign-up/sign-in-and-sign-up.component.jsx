@@ -3,11 +3,11 @@ import SignIn from '../../components/sign-in/sign-in.component';
 import SignUp from '../../components/sign-up/sign-up.component';
 import './sign-in-and-sign-up.styles.scss';
 
-const SigninAndSignUp = () => (
-    <div className='sign-in-and-sign-up'>
-        <SignIn/>
-        <SignUp/>
-    </div>
+const SignInAndSignUpPage = () => (
+  <div className='sign-in-and-sign-up'>
+    <SignIn />
+    <SignUp />
+  </div>
 );
 
-export default SigninAndSignUp;
+export default SignInAndSignUpPage;
